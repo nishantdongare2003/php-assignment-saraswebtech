@@ -5,7 +5,7 @@
     ?>
 
     <!-- Here Show The Validation errors -->
-    <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
+    <?php echo validation_errors('<div class="alert alert-danger text-center">', '</div>'); ?>
 
 
     <!-- Use The Flashdata Of When The User ADD,UPDATE,DELETE the employess Record and also find any error -->
@@ -68,9 +68,9 @@
                                 <td><?php echo $emp['designation']; ?></td>
                                 <td><?php echo $emp['salary']; ?></td>
                                 <td>
-                                    <a href="<?php echo base_url(); ?>Employee_Controller/View/<?php echo $emp['id'] ?>" class='btn btn-primary'>View</a>
-                                    <a href="<?php echo base_url(); ?>Employee_Controller/Edit/<?php echo $emp['id']; ?>" class='btn btn-success'>Edit</a>
-                                    <a href="<?php echo base_url(); ?>Employee_Controller/Delete/<?php echo $emp['id'];?>" onclick="return confirm('Are You Sure You Want  Delete This Employee Data')"  class='btn btn-danger'>Delete</a>
+                                    <a href="<?php echo base_url('employee-view/'.$emp['id']); ?>" class='btn btn-primary'>View</a>
+                                    <a href="<?php echo base_url('employee-edit/'.$emp['id']); ?>" class='btn btn-success'>Edit</a>
+                                    <a href="<?php echo base_url('employee-delete/'.$emp['id']); ?>" onclick="return confirm('Are You Sure You Want  Delete This Employee Data')"  class='btn btn-danger'>Delete</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -87,7 +87,7 @@
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="<?php echo base_url(); ?>Employee_Controller/Add_employee" method='POST'>
+                <form action="<?php echo base_url('employee-add') ; ?>" method='POST'>
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title" id="exampleModalLabel">Add Employee</h1>
