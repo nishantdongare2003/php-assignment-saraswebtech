@@ -4,6 +4,10 @@
 
     ?>
 
+    <!-- Here Show The Validation errors -->
+    <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
+
+
     <!-- Use The Flashdata Of When The User ADD,UPDATE,DELETE the employess Record and also find any error -->
 
     <?php if($this->session->flashdata('error')): ?>
@@ -93,6 +97,7 @@
                         </div>
                         <div class="modal-body">
 
+                            
                             <label>Name</label>
                             <input type="text"  name='name' class='form-control' placeholder='Enter Your Name'>
 
