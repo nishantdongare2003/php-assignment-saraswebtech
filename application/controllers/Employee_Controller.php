@@ -30,7 +30,9 @@
                 $this->form_validation->set_rules('salary','Salary','trim|required');
 
                 if($this->form_validation->run()==false){
-                    $this->load->view('index');
+                    $data['employees'] = $this->Employee_Model->get_active_employees();
+
+                    $this->load->view('index',$data);
                 }else{
                     $data = array(
                         'name' => $this->input->post('name'),
@@ -86,7 +88,8 @@
                 $this->form_validation->set_rules('salary','Salary','trim|required');
 
                 if($this->form_validation->run()==false){
-                    $this->load->view('update');
+                    $data['employees'] = $this->Employee_Model->get_active_employees();
+                    $this->load->view('update',$data);
                 }else{
                     $data = array(
                         'name' => $this->input->post('name'),
