@@ -17,7 +17,7 @@
 
                     <div class="card-body">
 
-                    <form action="<?php echo base_url(); ?>Employee_Controller/update_employee/<?php echo $employee['id'] ?>" method='POST'>
+                    <form action="<?php echo base_url('employee-update/'.$employee['id']); ?>" method='POST'>
 
                     <input type="hidden" value='<?php echo $employee['id']; ?>'  name='id'>
 
@@ -42,6 +42,8 @@
                     <a href=" <?php base_url(); ?>Employee_Controller" class='btn btn-danger mt-3'>Cancle</a>
 
                     <input type="submit"  class='btn btn-success mt-3' value="Update">
+
+                    <button></button>
                    
 
 
