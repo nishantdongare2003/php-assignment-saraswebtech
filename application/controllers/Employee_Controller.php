@@ -48,16 +48,16 @@
                     if($result === 'email_exist'){
 
                         $this->session->set_flashdata('error','This Email Has Been Already Exists');
-                        redirect(base_url('Employee_Controller'));
+                        redirect(base_url('index'));
 
                     }elseif($result === 'phone_exist'){
 
                         $this->session->set_flashdata('error','This Phone Has Been Already Exists');
-                        redirect(base_url('Employee_Controller'));
+                        redirect(base_url('index'));
 
                     }else{
                         $this->session->set_flashdata('added','The Employee Has Been Added Successfully');
-                        redirect(base_url('Employee_Controller'));
+                        redirect(base_url('index'));
                     }
 
                 }
@@ -103,7 +103,7 @@
                     $result = $this->Employee_Model->update_employee($id,$data);
 
                     $this->session->set_flashdata('updated','The Employee Has Been Updated Successfully');
-                    redirect(base_url('Employee_Controller'));
+                    redirect(base_url('index'));
                   
 
                 }
@@ -120,7 +120,7 @@
 
             $this->Employee_Model->delete_employee($id);
             $this->session->set_flashdata('delete','The Employee Has Been Successfully Deleted');
-            redirect(base_url('Employee_Controller'));
+            redirect(base_url('index'));
 
         }
 
